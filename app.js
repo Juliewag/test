@@ -56,7 +56,7 @@ app.get('/world', function(req, res) {
 
   MongoClient.connect(conn_str, function(err, db) {
 
-    var message = {"msg": "test2"};
+    var message = {"msg": "testing auto deploy"};
     if (db && db !== "null" && db !== "undefined") {
 
       db.collection('messages').insert(message, {safe:true}, function(err){
