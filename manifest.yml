@@ -1,5 +1,5 @@
 applications:
-- name: lmuxmple
+- name: wagner
   memory: 128M
   command: node app.js
   services:

@@ -54,34 +54,37 @@ app.use('/', routes);
 app.get('/world', function(req, res) {
 
 
-  MongoClient.connect(conn_str, function(err, db) {
+  // MongoClient.connect(conn_str, function(err, db) {
+  //
+  //   var message = {"msg": "testing auto deploy"};
+  //   if (db && db !== "null" && db !== "undefined") {
+  //
+  //     db.collection('messages').insert(message, {safe:true}, function(err){
+  //       if (err) {
+  //         console.log(err.stack);
+  //         res.write('mongodb message insert failed');
+  //         res.end();
+  //       } else {
+  //         res.write('following messages has been inserted into database' + "\n"
+  //             + JSON.stringify(message));
+  //         res.end();
+  //       }
+  //     });
+  //   } else {
+  //     res.write('No mongo found');
+  //     res.end();
+  //   }
+  //
+  //   if(err){
+  //     console.log(err);
+  //   }
+  //
+  // });
 
-    var message = {"msg": "testing auto deploy"};
-    if (db && db !== "null" && db !== "undefined") {
+  //res.json({msg: "Hello World. My backend is deployed"});
 
-      db.collection('messages').insert(message, {safe:true}, function(err){
-        if (err) {
-          console.log(err.stack);
-          res.write('mongodb message insert failed');
-          res.end();
-        } else {
-          res.write('following messages has been inserted into database' + "\n"
-              + JSON.stringify(message));
-          res.end();
-        }
-      });
-    } else {
-      res.write('No mongo found');
-      res.end();
-    }
-
-    if(err){
-      console.log(err);
-    }
-
-  });
-
- // res.json({msg: "Hello World. I am writing to database - "});
+  res.write('Hello World. My Backend is deployed');
+  res.end();
 });
 
 
